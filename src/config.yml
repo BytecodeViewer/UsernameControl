@@ -1,0 +1,23 @@
+### Config for UsernameControl
+
+prefix: '&a UsernameControl &8> &r'
+
+# Do you want to prevent players from connecting when
+# someone with their username is already connected?
+duplicate:
+  enabled: true
+  message: 'You are already connected to this server'
+
+# Do you want to prevent players from connecting with
+# invalid names?
+invalid-names:
+  enabled: true
+  message: 'Username contains invalid characters'
+
+# Do you want to prevent players from connecting with
+# an invalid username length?
+length:
+  enabled: false
+  message: 'Invalid username length'
+  max-length: 16
+  min-length: 3

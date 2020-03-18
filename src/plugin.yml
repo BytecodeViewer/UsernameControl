@@ -1,0 +1,12 @@
+name: UsernameControl
+version: 3
+api-version: 1.13
+main: me.bytecodeviewer.usernamecontrol.UsernameControl
+author: BytecodeViewer
+description: A lightweight plugin to prevent players with malicious usernames from joining.
+website: https://www.spigotmc.org/resources/72345/
+commands:
+  UsernameControl:
+    description: Base command
+    usage: /<command> <reload>
+    aliases: [uc]
