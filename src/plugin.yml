@@ -1,5 +1,5 @@
 name: UsernameControl
-version: 3
+version: 4
 api-version: 1.13
 main: me.bytecodeviewer.usernamecontrol.UsernameControl
 author: BytecodeViewer

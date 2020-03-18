@@ -21,3 +21,38 @@ length:
   message: 'Invalid username length'
   max-length: 16
   min-length: 3
+
+# List of invalid characters
+invalid-characters:
+  - " "
+  - "!"
+  - "\""
+  - "#"
+  - "$"
+  - "%"
+  - "&"
+  - "'"
+  - "("
+  - ")"
+  - "*"
+  - "+"
+  - ","
+  - "-"
+  - "."
+  - "/"
+  - ":"
+  - ";"
+  - "<"
+  - "="
+  - ">"
+  - "?"
+  - "@"
+  - "["
+  - "\\"
+  - "]"
+  - "^"
+  - "`"
+  - "{"
+  - "}"
+  - "|"
+  - "~"

@@ -18,24 +18,14 @@ public class LoginListener implements Listener {
                 event.disallow(PlayerLoginEvent.Result.KICK_OTHER, UsernameControl.pluginPrefix + UsernameControl.duplicateUserMessage);
 
         if (UsernameControl.invalidUsername) {
-            if (player.getName().contains(" ") || player.getName().contains("!") || player.getName().contains("\"") || player.getName().contains("#")
-                    || player.getName().contains("$") || player.getName().contains("%") || player.getName().contains("&") || player.getName().contains("'")
-                    || player.getName().contains("(") || player.getName().contains(")") || player.getName().contains("*") || player.getName().contains("+")
-                    || player.getName().contains(",") || player.getName().contains("-") || player.getName().contains(".") || player.getName().contains("/")
-                    || player.getName().contains(":") || player.getName().contains(";") || player.getName().contains("<") || player.getName().contains("=")
-                    || player.getName().contains(">") || player.getName().contains("?") || player.getName().contains("@") || player.getName().contains("[")
-                    || player.getName().contains("\\") || player.getName().contains("]") || player.getName().contains("^") || player.getName().contains("`")
-                    || player.getName().contains("{") || player.getName().contains("|") || player.getName().contains("}") || player.getName().contains("~")) {
-                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, UsernameControl.pluginPrefix + UsernameControl.invalidUsernameMessage);
+            for (String entry : UsernameControl.invalidCharacters) {
+                if (player.getName().contains(entry))
+                    event.disallow(PlayerLoginEvent.Result.KICK_OTHER, UsernameControl.pluginPrefix + UsernameControl.invalidUsernameMessage);
             }
         }
 
-        if (UsernameControl.usernameLength) {
-            if (player.getName().length() > UsernameControl.maxUsernameLength)
+        if (UsernameControl.usernameLength)
+            if (player.getName().length() > UsernameControl.maxUsernameLength || player.getName().length() < UsernameControl.minUsernameLength)
                 event.disallow(PlayerLoginEvent.Result.KICK_OTHER, UsernameControl.pluginPrefix + UsernameControl.usernameLengthMessage);
-
-            if (player.getName().length() < UsernameControl.minUsernameLength)
-                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, UsernameControl.pluginPrefix + UsernameControl.usernameLengthMessage);
-        }
     }
 }
